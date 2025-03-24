@@ -1,0 +1,133 @@
+.chat-container {
+    height: 500px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 75%;
+}
+
+.user-message {
+    background-color: #d1ecf1;
+    margin-left: auto;
+}
+
+.ai-message {
+    background-color: #f8f9fa;
+}
+
+.system-message {
+    background-color: #ffeeba;
+    color: #856404;
+    text-align: center;
+    max-width: 100%;
+    font-style: italic;
+}
+
+.typing-indicator {
+    display: inline-block;
+    width: 50px;
+    text-align: left;
+}
+
+.typing-indicator span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 3px;
+    background-color: #666;
+    border-radius: 50%;
+    animation: typing 1s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.document-card {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.document-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.document-status {
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.status-processed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-processing {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.status-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.status-uploaded, .status-pending, .status-downloading, .status-transcribing {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.video-thumbnail {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.transcript-segment {
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.transcript-segment:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.timestamp {
+    font-size: 12px;
+    color: #666;
+    margin-right: 10px;
+    font-family: monospace;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Bootstrap icons fallback */
+.bi-trash::before {
+    content: "🗑️";
+} 

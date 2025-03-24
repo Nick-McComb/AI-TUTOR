@@ -1,0 +1,26 @@
+import whisper
+from pydub import AudioSegment
+
+def convert_mp4_to_wav(mp4_file, wav_file="audio.wav"):
+    """Converts MP4 video to WAV audio using pydub"""
+    audio = AudioSegment.from_file(mp4_file, format="mp4")
+    audio = audio.set_frame_rate(16000).set_channels(1)  
+    audio.export(wav_file, format="wav")
+    return wav_file
+
+def transcribe_audio(audio_file):
+    """Transcribes an audio file using Whisper."""
+    model = whisper.load_model("base") 
+    result = model.transcribe(audio_file)
+    return result["text"]
+
+def mp4_to_transcript(mp4_file):
+    """Converts MP4 video to transcript."""
+    wav_file = convert_mp4_to_wav(mp4_file)
+    transcript = transcribe_audio(wav_file)
+    return transcript
+
+mp4_file = "" 
+transcript = mp4_to_transcript(mp4_file)
+print("Transcript:\n", transcript)
+

@@ -1,1 +1,1 @@
-# AI-TUTOR
+# ai-tutor
